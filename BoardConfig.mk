@@ -23,7 +23,7 @@ BOARD_PREBUILT_DTBIMAGE_DIR := kernel/arch/arm64/boot/dts/rockchip
 PRODUCT_UBOOT_CONFIG ?= rk3568
 PRODUCT_KERNEL_ARCH ?= arm64
 PRODUCT_KERNEL_DTS ?= rk3568-evb1-ddr4-v10
-PRODUCT_KERNEL_CONFIG ?= rockchip_defconfig rk356x.config
+PRODUCT_KERNEL_CONFIG ?= rockchip_defconfig
 
 # BOARD_AVB_ENABLE := true
 SF_PRIMARY_DISPLAY_ORIENTATION := 0
@@ -97,6 +97,7 @@ BUILD_WITH_GO_OPT := true
 #Config omx to support codec type.
 BOARD_SUPPORT_VP9 := true
 BOARD_SUPPORT_VP6 := false
+BOARD_SUPPORT_HEVC_ENC := true
 
 # Allow deprecated BUILD_ module types to get DDK building
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
@@ -105,5 +106,8 @@ BUILD_BROKEN_USES_BUILD_HOST_SHARED_LIBRARY := true
 BUILD_BROKEN_USES_BUILD_HOST_STATIC_LIBRARY := true
 
 BOARD_SHOW_HDMI_SETTING ?= true
+
+# for dynamaic afbc target 
+BOARD_HS_DYNAMIC_AFBC_TARGET := false
 
 PRODUCT_HAVE_OPTEE := true

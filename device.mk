@@ -11,14 +11,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 BOARD_SEPOLICY_DIRS += vendor/rockchip/hardware/interfaces/neuralnetworks/1.0/default/sepolicy
 PRODUCT_PACKAGES += \
-    librknnhal_bridge \
+    public.libraries-rockchip \
+    librknnhal_bridge.rockchip \
     rockchip.hardware.neuralnetworks@1.0-impl \
     rockchip.hardware.neuralnetworks@1.0-service
 
 $(call inherit-product-if-exists, vendor/rockchip/common/npu/npu.mk)
 
 BOARD_SEPOLICY_DIRS += device/rockchip/rk356x/sepolicy_vendor
-
+TARGET_SYSTEM_PROP += device/rockchip/rk356x/rk356x.prop
 # enable this for support f2fs with data partion
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 
@@ -75,7 +76,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
                 ro.audio.monitorOrientation=true \
                 debug.nfc.fw_download=false \
                 debug.nfc.se=false \
-                vendor.hwc.compose_policy=6 \
+                vendor.hwc.compose_policy=1 \
                 sys.wallpaper.rgb565=0 \
                 sf.power.control=2073600 \
                 sys.rkadb.root=0 \
@@ -87,5 +88,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
                 wifi.supplicant_scan_interval=15 \
                 ro.factory.tool=0 \
                 ro.kernel.android.checkjni=0 \
-                ro.build.shutdown_timeout=0 \
+                ro.build.shutdown_timeout=6 \
                 persist.enable_task_snapshots=false
