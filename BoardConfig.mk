@@ -2,8 +2,6 @@
 # Copyright (c) 2020 Rockchip Electronics Co., Ltd
 #
 
-CURRENT_SDK_VERSION := rk356x_ANDROID10.0_MID_V1.0
-
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
@@ -41,12 +39,6 @@ BOARD_OVERRIDE_RS_CPU_VARIANT_64 := cortex-a55
 TARGET_USES_64_BIT_BCMDHD := true
 TARGET_USES_64_BIT_BINDER := true
 
-# HACK: Build apps as 64b for volantis_64_only
-ifneq (,$(filter ro.zygote=zygote64, $(PRODUCT_DEFAULT_PROPERTY_OVERRIDES)))
-TARGET_PREFER_32_BIT_APPS :=
-TARGET_SUPPORTS_64_BIT_APPS := true
-endif
-
 # Sensors
 BOARD_SENSOR_ST := true
 BOARD_SENSOR_MPU_VR := false
@@ -57,9 +49,6 @@ BOARD_USES_GENERIC_INVENSENSE := false
 TARGET_BOARD_PLATFORM_PRODUCT ?= tablet
 
 ENABLE_CPUSETS := true
-
-# Enable Dex compile opt as default
-WITH_DEXPREOPT := true
 
 BOARD_NFC_SUPPORT := false
 BOARD_HAS_GPS := false
@@ -75,18 +64,11 @@ BOARD_USB_HOST_SUPPORT := true
 
 BOARD_USE_SPARSE_SYSTEM_IMAGE := true
 
-# Google Service and frp overlay
-BUILD_WITH_GOOGLE_MARKET := false
-BUILD_WITH_GOOGLE_MARKET_ALL := false
-BUILD_WITH_GOOGLE_FRP := false
-BUILD_WITH_GOOGLE_GMS_EXPRESS := false
-
 # Add widevine L3 support
 BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 3
 
 # camera enable
 BOARD_CAMERA_SUPPORT := true
-ALLOW_MISSING_DEPENDENCIES=true
 
 # Config GO Optimization
 BUILD_WITH_GO_OPT := true

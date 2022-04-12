@@ -27,14 +27,10 @@ BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 PRODUCT_BOOT_DEVICE := fe310000.sdhci,fe330000.nandc
 
 # This ensures the needed build tools are available.
-# TODO: make non-linux builds happy with external/f2fs-tool; system/extras/f2fs_utils
-ifeq ($(HOST_OS),linux)
-  TARGET_USERIMAGES_USE_F2FS := true
-endif
+TARGET_USERIMAGES_USE_F2FS := true
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.recovery.rk30board.rc:recovery/root/init.recovery.rk30board.rc \
-    vendor/rockchip/common/bin/$(TARGET_ARCH)/busybox:recovery/root/sbin/busybox \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.rk356x.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.rk356x.rc \
@@ -59,8 +55,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/apns-full-conf.xml:system/etc/apns-conf.xml
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/spn-conf.xml:system/etc/spn-conf.xml
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.product.ota.host = www.rockchip.com:2300 \
-    ro.vendor.sdkversion = $(CURRENT_SDK_VERSION) \
     vendor.gralloc.disable_afbc = 0
 
 PRODUCT_COPY_FILES += \
