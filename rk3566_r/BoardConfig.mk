@@ -25,7 +25,12 @@ ifeq ($(strip $(BOARD_USES_AB_IMAGE)), true)
     TARGET_RECOVERY_FSTAB := device/rockchip/rk356x/rk3566_r/recovery.fstab_AB
 endif
 PRODUCT_UBOOT_CONFIG := rk3566
-PRODUCT_KERNEL_DTS := rk3566-evb2-lp4x-v10
+# PRODUCT_KERNEL_DTS := rk3566-lubancat-zero
+PRODUCT_KERNEL_DTS := rk3566-lubancat-zero-mipi
+# PRODUCT_KERNEL_DTS := rk3566-lubancat1
+# PRODUCT_KERNEL_DTS := rk3566-lubancat1-mipi
+# PRODUCT_KERNEL_DTS := rk3566-lubancat1-n
+# PRODUCT_KERNEL_DTS := rk3566-lubancat1-n-mipi
 BOARD_GSENSOR_MXC6655XA_SUPPORT := true
 BOARD_CAMERA_SUPPORT_EXT := true
 BOARD_HS_ETHERNET := true

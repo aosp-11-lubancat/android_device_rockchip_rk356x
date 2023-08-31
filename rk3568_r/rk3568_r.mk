@@ -39,7 +39,7 @@ PRODUCT_AAPT_PREF_CONFIG := mdpi
 #
 ## add Rockchip properties
 #
-PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=320
+PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=240
 PRODUCT_PROPERTY_OVERRIDES += ro.wifi.sleep.power.down=true
 PRODUCT_PROPERTY_OVERRIDES += persist.wifi.sleep.delay.ms=0
 PRODUCT_PROPERTY_OVERRIDES += persist.bt.power.down=true

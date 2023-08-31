@@ -30,6 +30,9 @@ on init
 
     chown system system /sys/system_monitor/system_status
     chmod 0666 /sys/system_monitor/system_status
+    insmod /vendor/lib/modules/rtlwifi.ko
+    insmod /vendor/lib/modules/rtl_pci.ko
+    insmod /vendor/lib/modules/rtl8188ee.ko
 
     chown system system /sys/class/devfreq/dmc/system_status
     chmod 0666 /sys/class/devfreq/dmc/system_status

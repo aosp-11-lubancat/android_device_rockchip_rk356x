@@ -29,7 +29,7 @@ TARGET_SYSTEM_PROP += device/rockchip/rk356x/rk356x.prop
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 
 # used for fstab_generator, sdmmc controller address
-PRODUCT_BOOT_DEVICE := fe310000.sdhci,fe330000.nandc
+PRODUCT_BOOT_DEVICE := fe310000.sdhci,fe2b0000.dwmmc
 
 # This ensures the needed build tools are available.
 # TODO: make non-linux builds happy with external/f2fs-tool; system/extras/f2fs_utils
@@ -66,7 +66,13 @@ PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/spn-conf.xml:system/etc/s
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.ota.host = www.rockchip.com:2300 \
     ro.vendor.sdkversion = $(CURRENT_SDK_VERSION) \
-    vendor.gralloc.disable_afbc = 0
+    vendor.gralloc.disable_afbc = 0 \
+    persist.sys.language=zh \
+    persist.sys.country=CN \
+    persist.sys.localevar= "" \
+    persist.sys.timezone=Asia/Shanghai \
+    ro.product.locale.language=zh \
+    ro.product.locale.region=CN 
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/public.libraries.txt:vendor/etc/public.libraries.txt

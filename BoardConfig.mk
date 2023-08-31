@@ -23,10 +23,10 @@ BOARD_PREBUILT_DTBIMAGE_DIR := kernel/arch/arm64/boot/dts/rockchip
 PRODUCT_UBOOT_CONFIG ?= rk3568
 PRODUCT_KERNEL_ARCH ?= arm64
 PRODUCT_KERNEL_DTS ?= rk3568-evb1-ddr4-v10
-PRODUCT_KERNEL_CONFIG ?= rockchip_defconfig
+PRODUCT_KERNEL_CONFIG ?= lubancat2_android11_defconfig
 
 # BOARD_AVB_ENABLE := true
-SF_PRIMARY_DISPLAY_ORIENTATION := 0
+# SF_PRIMARY_DISPLAY_ORIENTATION := 270
 
 # Disable emulator for "make dist" until there is a 64-bit qemu kernel
 BUILD_EMULATOR := false

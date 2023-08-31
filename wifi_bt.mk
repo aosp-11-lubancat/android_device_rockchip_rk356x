@@ -39,5 +39,5 @@
 #           rda587x,         #like  rtl8188+rda587x
 #           mt6622,          #like  rtl8188+mt6622 
 #
-BOARD_CONNECTIVITY_VENDOR := Broadcom
-BOARD_CONNECTIVITY_MODULE := ap6xxx
+BOARD_CONNECTIVITY_VENDOR := RealTek
+BOARD_CONNECTIVITY_MODULE := rtl8821cu
