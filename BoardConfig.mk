@@ -61,8 +61,13 @@ TARGET_BOARD_PLATFORM_PRODUCT ?= tablet
 
 ENABLE_CPUSETS := true
 
-# Enable Dex compile opt as default
-WITH_DEXPREOPT := true
+# Enable dex pre-opt to speed up initial boot
+# 只有在 Linux 系统编译时候才开启dex2oatd,在 mac 不支持 dex2oatd
+ifeq ($(HOST_OS),linux)
+  ifeq ($(WITH_DEXPREOPT),)
+    WITH_DEXPREOPT := true
+  endif
+endif
 
 BOARD_NFC_SUPPORT := false
 BOARD_HAS_GPS := false
